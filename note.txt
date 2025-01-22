@@ -1,0 +1,3 @@
+Launching Test 
+npx playwright test HomePageTest.spec.js --project=chromium --headed
+npx playwright test HomePageTest.spec.js --project=chromium --headed --debug   ---debug Mode
