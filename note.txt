@@ -1,3 +1,19 @@
 Launching Test 
 npx playwright test HomePageTest.spec.js --project=chromium --headed
 npx playwright test HomePageTest.spec.js --project=chromium --headed --debug   ---debug Mode
+
+
+built in locators
+page.getByRole()
+page.getByText()
+page.getByLabel()
+page.getByAltText(0)
+page.getByTitle()
+paget.getByPlaceholder()
+
+
+Code Generator: npx playwright codegen
+npx playwright codegen --target javascript
+npx playwright codegen --browser chromium
+npx playwright codegen --device "iphone 13"
+npx playwright codegen --viewpor-size "1280,720"
