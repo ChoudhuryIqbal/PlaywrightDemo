@@ -1,5 +1,4 @@
-const {test, expect} =require ('@playwright/test'
-)
+const {test, expect} =require ('@playwright/test')
 const { log } = require('console')
 
 test ('Built-in locators', async ({page})=>{
