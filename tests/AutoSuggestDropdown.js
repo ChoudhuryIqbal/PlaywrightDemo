@@ -1,23 +1,21 @@
 const {test,expect}=require ('@playwright/test')
 
 test ("Handle Dropdown", async ({page})=>{
-    await page.goto("http://google.com")
-    await page.locator("element of dropdown").click()
+    await page.goto("https://www.redbus.in")
+    await page.locator ('src').fill('delhi');
+    await page.waitForSelector("//li[contains(@class,'sc-iwsKbi')]/div/text[1]")
 
-    //1
-    const options=await page.locator ('ul> li label input')
-    await expect(options).toHaveCount(11);
-    for (let optoin of options)
-       let value= await optoin.textContent();
-       console.log(value)
-       if (value.includes('Angular')|| value.includes("java"))
-    {
-        await optoin.click()
+const fromCityOptions=await page.$$("li[contains(@class,'sc-iwsKbi')]/div/text[1]")
+    for (let option of fromCityOptions){
+    const value=await option.textContent()
+    console.log (value);
+    if (value.includes('Anand Vihar')){
+        await option.click()
+        break;
+    }
     }
 
-     
-    
-
-    })
+    await page.waitForTimeout(3000)
+})
 
 
